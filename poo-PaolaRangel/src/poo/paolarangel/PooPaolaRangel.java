@@ -19,8 +19,8 @@ public class PooPaolaRangel {
         //Tenemos que generar antes los objetos de las clases anterior
         
         Usuario x =new Usuario(); //Constructor de defecto 
-        x.altura=1.50f;//DEFECTO
-        x.peso=46.200f; //f significa flotante -DEFECTO
+        x.setAltura(1.50f);//DEFECTO
+        x.setPeso(46.200f); //f significa flotante -DEFECTO
         Imc algo =new Imc (); //Calculamos el imc a traves de su objeto
         algo.u=x; //DEFECTO
         System.out.println(algo.calcular());
