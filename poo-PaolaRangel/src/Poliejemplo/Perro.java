@@ -5,10 +5,6 @@
  */
 package Poliejemplo;
 
-/**
- *
- * @author T-102
- */
 public class Perro extends Animal implements ComportamientoAnimal{
 
    

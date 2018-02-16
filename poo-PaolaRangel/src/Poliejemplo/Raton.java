@@ -5,9 +5,13 @@
  */
 package Poliejemplo;
 
-public class Pollo extends Animal implements ComportamientoAnimal{//sobreescribir dar cuerpo al metodo hacerRuido
+public class Raton extends Animal implements ComportamientoAnimal {
+
     @Override
-    public void hacerRuido(){
-        System.out.println("Pio-pio-pio");
+    public void hacerRuido() {
+        System.out.println("iii-iii-iii");
+        
     }
+    
+    
 }

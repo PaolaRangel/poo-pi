@@ -4,14 +4,11 @@
  * and open the template in the editor.
  */
 package Poliejemplo;
+import java.util.*;
 
-/**
- *
- * @author T-102
- */
 public class Mascotas {
     public static void main(String[] args) {
-       //omportamientoAnimal animales[]=new Animal [10];
+      Animal animales[]=new Animal [12];
         
         //Primero generamos a los gatos
         animales [0]=new Gato();      
@@ -29,9 +26,36 @@ public class Mascotas {
          animales [8]=new Pollo();
          animales [9]=new Pollo();
          
+         animales[10]=new Raton();
+         animales[11]=new Raton();
+         
          //La magia del polimorfismo
-         /or (ComportamientoAnimal){
+         //for (ComportamientoAnimal){
          //  System.out.println("");
+         ServicioAnimal s=new ServicioAnimal();
+         for (Animal a:animales){
+             s.servicioHacerRuido((ComportamientoAnimal)a);//expresión expresiva
+         }
+         //VAMOS A GENERAR UN ARRAYLIST Y PONER OTROS ANIMALES
+         ArrayList<Animal> animalitos=new ArrayList<>();
+         animalitos.add(new Pollo ());//creación de objetos de forma anonimal
+         //new Pollo es lo mismo que Pollo pi= new Pollo()
+         animalitos.add(new Raton());
+         animalitos.add(new Raton ());
+         animalitos.add(new Perro());
+         animalitos.add(new Gato());
+         for(Animal a: animalitos){
+             s.servicioHacerRuido((ComportamientoAnimal)a);
+             
+         }
+         animalitos.get(0).setEdad(1);
+         System.out.println(animalitos.get(0).getEdad());
          }
     }
-}
+        
+         
+
+
+
+
+
