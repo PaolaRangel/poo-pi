@@ -5,6 +5,9 @@
  */
 package poo.paolarangel;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author T-102
@@ -109,21 +112,29 @@ public class Ventanita extends javax.swing.JFrame {
     }//GEN-LAST:event_textoAlturaActionPerformed
 
     private void textoPesoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoPesoActionPerformed
-        // TODO add your handling code here:
-        //Pedimos el valor al texto peso
-       float peso= Float.parseFloat(textoPeso.getText ());
-       float altura= Float.parseFloat(textoAltura.getText());
-       
-       //Creamos nuestra entidad
-       Usuario u=new Usuario ();
-       u.setPeso(peso);
-       u.setAltura(altura);
-       
-       //Generamos el modelo IMC
-       Imc x=new Imc ();
-       x.u=u;
-       //en el imc que se llama x invoca el metodo calcular
-       etiquetaResultado.setText(x.calcular());
+        try {
+            // TODO add your handling code here:
+            //Pedimos el valor al texto peso
+            float peso= Float.parseFloat(textoPeso.getText ());
+            float altura= Float.parseFloat(textoAltura.getText());
+            
+            //Creamos nuestra entidad
+            Usuario u=new Usuario ();
+            
+            //Los validamos
+            ValidarCantidades.ValidarValorNegativo(altura);
+            ValidarCantidades.ValidarValorNegativo(peso);
+            u.setPeso(peso);
+            u.setAltura(altura);
+            
+            //Generamos el modelo IMC
+            Imc x=new Imc ();
+            x.u=u;
+            //en el imc que se llama x invoca el metodo calcular
+            etiquetaResultado.setText(x.calcular());
+        } catch (NumeroNegativoException ex) {
+            etiquetaResultado.setText(ex.getMessage());
+        }
        
     }//GEN-LAST:event_textoPesoActionPerformed
 
@@ -131,9 +142,7 @@ public class Ventanita extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_botonCalcularActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
