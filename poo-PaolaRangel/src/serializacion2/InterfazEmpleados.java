@@ -70,6 +70,11 @@ public class InterfazEmpleados extends javax.swing.JFrame {
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ventas", "Sistemas", "Contabilidad", "Finanzas" }));
 
         jButton1.setText("Guardar Empleado");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -188,6 +193,19 @@ public class InterfazEmpleados extends javax.swing.JFrame {
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        
+        Empleado e1=new Empleado("Paola", "Rangel","Espinosa",45000F, "Sistemas");
+        
+        //System.out.println("Nombre: "+e1.getNombre());
+        //System.out.println("Paterno: "+e1.getPeterno());
+        //System.out.println("Materno: "+e1.getMaterno());
+        //System.out.println("Sueldo Base: "+e1.getSueldoBase());
+        //System.out.println("Departamento: "+e1.getDepartamento());
+        System.out.println(e1);// sin en toString aparece la dirección de memoria
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
