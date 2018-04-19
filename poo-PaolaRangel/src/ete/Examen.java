@@ -5,13 +5,26 @@
  */
 package ete;
 
+import java.io.Serializable;
+
 /**
  *
  * @author T-102
  */
-public class Examen implements serializable {
+public class Examen implements Serializable{
+    
     private String nombre;
-    private float calificacion;
+    private String calificacion;
+
+    @Override
+    public String toString() {
+        return "Examen{" + "nombre=" + nombre + ", calificacion=" + calificacion + '}';
+    }
+
+    public Examen(String nombre, String calificacion) {
+        this.nombre = nombre;
+        this.calificacion = calificacion;
+    }
 
     public Examen() {
     }
@@ -24,15 +37,14 @@ public class Examen implements serializable {
         this.nombre = nombre;
     }
 
-    public float getCalificacion() {
+    public String getCalificacion() {
         return calificacion;
     }
 
-    public void setCalificacion(float calificacion) {
+    public void setCalificacion(String calificacion) {
         this.calificacion = calificacion;
     }
 
     
-    
-    
+   
 }

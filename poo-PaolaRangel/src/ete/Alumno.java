@@ -5,26 +5,43 @@
  */
 package ete;
 
+import java.io.Serializable;
+
 /**
  *
  * @author T-102
  */
-public class Alumno {
+public class Alumno implements Serializable{
     
+    private String cuenta;
     private String nombre;
     private String paterno;
     private String materno;
-    private long cuenta;
     private Examen examen;
 
-    public Alumno(String nombre, String paterno, String materno, long cuenta, Examen examen) {
+    @Override
+    public String toString() {
+        return "Alumno{" + "cuenta=" + cuenta + ", nombre=" + nombre + ", paterno=" + paterno + ", materno=" + materno + ", examen=" + examen + '}';
+    }
+
+    public Alumno(String cuenta, String nombre, String paterno, String materno, Examen examen) {
+        this.cuenta = cuenta;
         this.nombre = nombre;
         this.paterno = paterno;
         this.materno = materno;
-        this.cuenta = cuenta;
         this.examen = examen;
     }
-    
+
+    public Alumno() {
+    }
+
+    public String getCuenta() {
+        return cuenta;
+    }
+
+    public void setCuenta(String cuenta) {
+        this.cuenta = cuenta;
+    }
 
     public String getNombre() {
         return nombre;
@@ -50,14 +67,6 @@ public class Alumno {
         this.materno = materno;
     }
 
-    public long getCuenta() {
-        return cuenta;
-    }
-
-    public void setCuenta(long cuenta) {
-        this.cuenta = cuenta;
-    }
-
     public Examen getExamen() {
         return examen;
     }
@@ -66,9 +75,6 @@ public class Alumno {
         this.examen = examen;
     }
 
-  
     
     
-
-   
 }
